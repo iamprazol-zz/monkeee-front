@@ -1,3 +1,8 @@
+const webpack = require("webpack");
+const path = require("path");
+
+process.env.NODE_ENV = "development";
+
 module.exports = {
     devtool: 'inline-source-map',
     entry: './src/index.js',
@@ -18,13 +23,21 @@ module.exports = {
           use: ['babel-loader',  'eslint-loader']
         },
         { 
-          test: /\.less$/,
+          test: /\.css$/,
           use: [ 
             'style-loader',
             'css-loader', 
-            'less-loader',
           ],
+        },
+        {
+          test: /\.svg$/,
+          loader: 'svg-inline-loader'
         },
       ]
     },
+    plugins: [
+      new webpack.DefinePlugin({
+        "process.env.API_URL": JSON.stringify("http://user.me/api")
+      })
+    ],
   };

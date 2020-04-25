@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
+import './index.css';
+import App from './components/App';
 
 class Welcome extends Component {
-    render(){
+    render () {
         return (
-        <h1>Hello Monkeee</h1>
+            <Router>
+                <App />
+            </Router>
         );
     }
 }

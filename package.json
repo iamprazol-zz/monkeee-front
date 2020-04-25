@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "format": "prettier --write \"src/**/*.js\"",
-    "eslint-fix": "eslint --fix \"src/**/*.js\"", // the eslint script
+    "eslint-fix": "eslint --fix \"src/**/*.js\"",
     "build": "webpack --mode production"
   },
   "author": "Prajjwal Poudel",
@@ -25,10 +25,25 @@
     "@babel/preset-react": "^7.9.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.2",
     "eslint": "^6.8.0",
     "eslint-config-react": "^1.1.7",
     "eslint-loader": "^4.0.0",
     "eslint-plugin-react": "^7.19.0",
-    "prettier": "2.0.4"
+    "prettier": "2.0.4",
+    "react-inlinesvg": "^1.2.0",
+    "style-loader": "^1.1.4",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-image": "^2.4.0",
+    "react-image-appear": "^1.2.23",
+    "react-router-dom": "^5.1.2",
+    "react-svg": "^11.0.20"
   }
 }
