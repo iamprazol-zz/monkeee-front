@@ -7,7 +7,7 @@ const NavBar = props => {
     return (
         <NavLink to={links} exact>
 
-            <input type="radio" name="slideItem" id={id} className="slide-toggle" checked/>
+            <input type="radio" name="slideItem" id={id} className="slide-toggle"/>
             <label htmlFor={id}>
                 <p className="icon">
                     {icon}
