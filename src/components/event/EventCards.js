@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cards = props => {
+const EventCards = props => {
     const { imgsrc, description, address, opening, closing, price, ticketLink, facebook, instagram } = props;
     return (
         <div className="card">
@@ -21,4 +21,4 @@ const Cards = props => {
     );
 };
 
-export default Cards;
+export default EventCards;

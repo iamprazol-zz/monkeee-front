@@ -153,6 +153,11 @@ body {
   margin-left: 20px;
 }
 
+.title {
+  padding: 2px 16px;
+  text-align: center;
+}
+
 .description {
   padding: 2px 16px;
 }

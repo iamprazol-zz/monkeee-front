@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Cards from '../common/Cards';
-// import Cards from '../common/Cards';
+import EventCards from './EventCards';
 
 class EventPage extends Component {
     constructor () {
@@ -20,7 +19,7 @@ class EventPage extends Component {
                     return (
 
                         <div className="eachCard" key={upcomingEvent.id}>
-                            <Cards
+                            <EventCards
                                 imgsrc={upcomingEvent.picture}
                                 description={upcomingEvent.description}
                                 address={upcomingEvent.address}
@@ -37,7 +36,7 @@ class EventPage extends Component {
                 let liveEvents = data.data.live.original.data.map((liveEvent) => {
                     return (
                         <div className="eachCard" key={liveEvent.id}>
-                            <Cards
+                            <EventCards
                                 imgsrc={liveEvent.picture}
                                 description={liveEvent.description}
                                 address={liveEvent.address}
