@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventCards from './EventCards';
+import Cards from '../common/Cards';
 
 class EventPage extends Component {
     constructor () {
@@ -19,16 +19,15 @@ class EventPage extends Component {
                     return (
 
                         <div className="eachCard" key={upcomingEvent.id}>
-                            <EventCards
+                            <Cards
+                                name={upcomingEvent.name}
+                                dot="upc"
                                 imgsrc={upcomingEvent.picture}
-                                description={upcomingEvent.description}
-                                address={upcomingEvent.address}
+                                category={upcomingEvent.category}
+                                club={upcomingEvent.club}
                                 opening={upcomingEvent.opening}
                                 closing={upcomingEvent.closing}
-                                price={upcomingEvent.price}
-                                ticketLink={upcomingEvent.ticket_link}
-                                facebook={upcomingEvent.facebook}
-                                instagram={upcomingEvent.instagram}
+                                suburb={upcomingEvent.suburb}
                             />
                         </div>
                     );
@@ -36,16 +35,15 @@ class EventPage extends Component {
                 let liveEvents = data.data.live.original.data.map((liveEvent) => {
                     return (
                         <div className="eachCard" key={liveEvent.id}>
-                            <EventCards
+                            <Cards
+                                name={liveEvent.name}
+                                dot="live"
                                 imgsrc={liveEvent.picture}
-                                description={liveEvent.description}
-                                address={liveEvent.address}
+                                category={liveEvent.category}
+                                club={liveEvent.club}
                                 opening={liveEvent.opening}
                                 closing={liveEvent.closing}
-                                price={liveEvent.price}
-                                ticketLink={liveEvent.ticket_link}
-                                facebook={liveEvent.facebook}
-                                instagram={liveEvent.instagram}
+                                suburb={liveEvent.suburb}
                             />
                         </div>
                     );
@@ -58,17 +56,11 @@ class EventPage extends Component {
         return (
             <div className="events">
                 <div className="event-type">
-                    Live Events
+                    Events
                     <div className="event-divider" />
                 </div>
                 <div className="card-holder">
                     {this.state.liveEvents}
-                </div>
-                <div className="event-type">
-                   Upcoming Events
-                    <div className="event-divider" />
-                </div>
-                <div className="card-holder">
                     {this.state.upcomingEvents}
                 </div>
             </div>
