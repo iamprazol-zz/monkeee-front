@@ -43,8 +43,7 @@ class ClubPage extends Component {
         return (
             <div className="events">
                 <div className="event-type">
-                    Clubs
-                    <div className="event-divider" />
+                    <p>Clubs</p>
                 </div>
                 <div className="card-holder">
                     {this.state.clubs}

@@ -11,6 +11,9 @@ const DjCards = props => {
                 <div className="popup-image-holder">
                     <img src={imgsrc} alt="Club" />
                 </div>
+                <div className="item-header">
+                    <p>Details</p>
+                </div>
                 <div className="popup-description">
                     <p>{description}</p>
                 </div>

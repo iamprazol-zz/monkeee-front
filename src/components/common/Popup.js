@@ -18,7 +18,6 @@ class Popup extends Component {
     }
 
     componentDidMount () {
-        console.log( this.state.url );
         this.renderSwitch(this.state.url);
     }
 
@@ -70,6 +69,7 @@ class Popup extends Component {
                             return (
                                 <div className="popup-eachCard" key={club.id}>
                                     <ClubCards
+                                        oneurl={club.id}
                                         name={club.name}
                                         imgsrc={club.cover_photo}
                                         description={club.description}
@@ -117,21 +117,20 @@ class Popup extends Component {
     render () {
         return (
             <div>
-            {
-                this.state.closePopup ?
-                <div className="popup-overlay">
-                <div className="popup">
-                    <span className="popup-close" onClick={this.displayPopup}>&times;</span>
-                    <div className="popup-events">
-                        <div className="popup-card-holder">
-                            {this.state.items}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            :
-            null
-            }
+                {
+                    this.state.closePopup ?
+                        <div className="popup-overlay">
+                            <div className="popup">
+                                <span className="popup-close" onClick={this.displayPopup}>&times;</span>
+                                <div className="popup-events">
+                                    <div className="popup-card-holder">
+                                        {this.state.items}
+                                    </div>
+                                </div>
+                            </div>
+                        </div> :
+                        null
+                }
             </div>
         );
     }

@@ -41,8 +41,7 @@ class DjPage extends Component {
         return (
             <div className="events">
                 <div className="event-type">
-                    Djays
-                    <div className="event-divider" />
+                    <p>Djays</p>
                 </div>
                 <div className="card-holder">
                     {this.state.djs}

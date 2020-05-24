@@ -6,104 +6,97 @@ body .no-scroll{
   overflow: hidden;
 }
   
-  .clear{
-    clear: both;
-  }
+.clear{
+  clear: both;
+}
   
+.slide-toggle{
+  display: none;
+}
   
-  .slide-toggle{
-    display: none;
-  }
+.slidemenu{
+  font-family: arial, sans-serif;
+  max-width: 600px;
+  margin: 30px auto;
+  overflow: hidden;
+}
   
-  .slidemenu{
-    font-family: arial, sans-serif;
-    max-width: 600px;
-    margin: 50px auto;
-    overflow: hidden;
-  }
+.slidemenu a label{
+  width: 25%;
+  text-align: center;
+  display: block;
+  float: left;
+  color: #333;
+  opacity: 0.2;
+}
   
-  .slidemenu a label{
-    width: 25%;
-    text-align: center;
-    display: block;
-    float: left;
-    color: #333;
-    opacity: 0.2;
+.slidemenu label:hover{
+  cursor: pointer;
+  color: #666;
+}
   
-  }
+.slidemenu label span{
+  display: block;
+  padding: 10px;    
+}
   
-  .slidemenu label:hover{
-    cursor: pointer;
-    color: #666;
-  }
+.slidemenu label .icon{
+  font-size: 20px;
+  border: solid 2px #333;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 50%;
+}
   
-  .slidemenu label span{
-    display: block;
-    padding: 10px;    
-  }
+/*Bar Style*/
+.slider{
+  width: 100%;
+  height: 5px;
+  display: block;
+  background: #ccc;
+  margin-top: 10px;
+  border-radius: 5px;
+}
   
-  .slidemenu label .icon{
-    font-size: 20px;
-    border: solid 2px #333;
-    text-align: center;
-    height: 50px;
-    width: 50px;
-    display: block;
-    margin: 0 auto;
-    line-height: 50px;
-    border-radius: 50%;
-  }
+.slider .bar{
+  width: 25%;
+  height: 5px;
+  background: #333;
+  border-radius: 5px;
+}
   
-  /*Bar Style*/
+/*Animations*/
+.slidemenu a, .slider .bar {
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+}
   
-  .slider{
-    width: 100%;
-    height: 5px;
-    display: block;
-    background: #ccc;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
+/*Toggle*/
+.slidemenu a:active {
+  opacity: 1;
+}
   
-  .slider .bar{
-    width: 25%;
-    height: 5px;
-    background: #333;
-    border-radius: 5px;
-  }
+.slidemenu a:active ~ .slider .bar{ margin-left: 0; }
+.slidemenu a:active ~ .slider .bar{ margin-left: 25%; }
+.slidemenu a:active ~ .slider .bar{ margin-left: 50%; }
+.slidemenu a:active ~ .slider .bar{ margin-left: 75%; }
   
-  /*Animations*/
-  .slidemenu a, .slider .bar {
-    transition: all 500ms ease-in-out;
-    -webkit-transition: all 500ms ease-in-out;
-    -moz-transition: all 500ms ease-in-out;
-  }
-  
-  /*Toggle*/
-  
-  .slidemenu .slide-toggle + a {
-    opacity: 1;
-  }
-  
-  
-  
-  .slidemenu a:active ~ .slider .bar{ margin-left: 0; }
-  .slidemenu a:active ~ .slider .bar{ margin-left: 25%; }
-  .slidemenu a:active ~ .slider .bar{ margin-left: 50%; }
-  .slidemenu a:active ~ .slider .bar{ margin-left: 75%; }
-  
-
-  .container {
-    width: 750px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.container {
+  width: 750px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .logo-box {
-    width: 30%;
-    margin: 100px auto 0 auto;
+  width: 30%;
+  margin: 100px auto 0 auto;
 }
 
 .logo-box img{
@@ -111,17 +104,9 @@ body .no-scroll{
 }
 
 .divider-2 {
-    margin: 30px auto;
-    height: 3px;
-    width: 220px;
-    background-color: #2d2d2d;
-}
-
-.event-divider {
-  margin-left: -25px;
-  margin-top: 10px;
+  margin: 30px auto;
   height: 3px;
-  width: 150px;
+  width: 220px;
   background-color: #2d2d2d;
 }
 
@@ -132,11 +117,11 @@ body .no-scroll{
 
 .content .motto {
   font-size: 28px;
-    color: #2d2d2d;
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Josefin Sans', sans-serif;
-    min-height: 140px;
+  color: #2d2d2d;
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  min-height: 140px;
 }
 
 .card {
@@ -160,7 +145,7 @@ body .no-scroll{
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
   grid-gap: 10px;
-  padding: 40px;
+  padding: 0px 40px 40px 40px;
   margin-left: 15px;
 }
 
@@ -187,9 +172,10 @@ p .desp {
 }
 
 .event-type{
-  margin: 30px auto;
-  width: 150px;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #020813;
+  text-align: center;
 }
 
 .image-holder{
@@ -227,13 +213,13 @@ p .desp {
 
 .hover {
   transition: all 0.4s ease-in; 
-  }
+}
 
 .hover {
   position: relative;
-  /* height: 80px; */
 }
- .card:hover .hover h2 {
+
+.card:hover .hover h2 {
   margin-top: 40px;
   transition: all 0.4s ease-out;
   text-transform: uppercase;
@@ -242,6 +228,7 @@ p .desp {
 .btn {
   background-color: #F27935;
 }
+
 .btn .round {
   background-color: #f59965;
 }
@@ -321,12 +308,12 @@ p .desp {
 /* The Modal (background) */
 .popup-overlay {
 	z-index: 1;
-    left: 0;
-    top: 0;
-    min-width: 100%;
-    min-height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
 }
 
 .popup {
@@ -349,11 +336,11 @@ p .desp {
 
 /* The Close Button */
 .popup-close {
-position: absolute;
-top: 0px;
-right: 20px;
-font-size: 50px;
-font-weight: bolder;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 50px;
+  font-weight: bolder;
 }
 
 .popup-close:hover,
@@ -370,6 +357,7 @@ font-weight: bolder;
   border-top-left-radius: .3rem;
   border-top-right-radius: .3rem;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .popup-title {
@@ -418,4 +406,26 @@ font-weight: bolder;
     flex: 1;
     padding: 5px;
     margin-left: 60px;
+}
+
+.club-gallery img {
+  border-radius: 25px;
+  width: 250px;
+  height: auto;
+  min-height: 185px;
+}
+
+.item-header{
+  font-size: 20px;
+  font-weight: 600;
+  color: #020813;
+  text-align: center;
+}
+
+.club-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  padding: 10px;
+  margin-left: 15px;
+  font-size: 0.95rem;
 }

@@ -10,6 +10,9 @@ const EventCards = props => {
                 <div className="popup-image-holder">
                     <img src={imgsrc} alt="Event" />
                 </div>
+                <div className="item-header">
+                    <p>Details</p>
+                </div>
                 <div className="popup-description">
                     <p>{description}</p>
                 </div>

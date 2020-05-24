@@ -58,8 +58,7 @@ class EventPage extends Component {
         return (
             <div className="events">
                 <div className="event-type">
-                    Events
-                    <div className="event-divider" />
+                    <p>Events</p>
                 </div>
                 <div className="card-holder">
                     {this.state.liveEvents}
