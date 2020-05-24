@@ -16,13 +16,12 @@ class DjPage extends Component {
             }).then(data => {
                 let djs = data.data.map((dj) => {
                     return (
-
-                        <div className="eachCard" key={dj.id}>
+                        <div className="eachCard" key={dj.dj}>
                             <Cards
+                                oneurl = {dj.dj}
                                 name = {dj.name}
                                 imgsrc={dj.picture}
                                 description={dj.bio}
-                                suburb={dj.suburb_name}
                                 address={dj.resident}
                                 email={dj.email}
                                 phone={dj.mobile}

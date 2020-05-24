@@ -20,6 +20,7 @@ class EventPage extends Component {
 
                         <div className="eachCard" key={upcomingEvent.id}>
                             <Cards
+                                oneurl={upcomingEvent.id}
                                 name={upcomingEvent.name}
                                 dot="upc"
                                 imgsrc={upcomingEvent.picture}
@@ -36,6 +37,7 @@ class EventPage extends Component {
                     return (
                         <div className="eachCard" key={liveEvent.id}>
                             <Cards
+                                oneurl={liveEvent.id}
                                 name={liveEvent.name}
                                 dot="live"
                                 imgsrc={liveEvent.picture}

@@ -1,70 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class EventCards extends Component {
-    constructor (props) {
-        super(props);
-
-        this.state = {
-            isHovered: false
-        };
-
-        this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
-        this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
-
-        console.log(window.location.pathname);
-    }
-
-    onMouseEnterHandler () {
-        this.setState({
-            isHovered: true
-        });
-    }
-
-    onMouseLeaveHandler () {
-        this.setState({
-            isHovered: false
-        });
-    }
-
-    render () {
-        const { name, imgsrc, dot, category, club, suburb, opening, closing } = this.props;
-
-        return (
-            <div className="card" onMouseEnter={this.onMouseEnterHandler} onMouseLeave={this.onMouseLeaveHandler}>
-                <div className="main">
-                    <div className="image-holder">
-                        <img src={imgsrc} alt="Event" />
-                    </div>
-                    <div className="details">
-                        {
-                            this.state.isHovered ?
-                                <div className="hover">
-                                    <h2><i>{name}</i></h2>
-                                    <a href="" className="btn">
-                                        <span className="txt">Open</span>
-                                        <span className="round">
-                                            <p> ➺</p>
-                                        </span>
-                                    </a>
-                                </div> :
-                                <div className="identifier">
-                                    <h2><i>{name}</i></h2>
-                                    <p>Opening : <strong>{opening}</strong></p>
-                                    <p>Closing : <strong>{closing}</strong></p>
-                                    <p>Music : <strong>{category}</strong></p>
-                                    <p>📍<strong>{club} | {suburb}</strong></p>
-                                </div>
-
-                        }
-                    </div>
-                    <div className="column">
-                        <span className={`${dot}`}> </span>
-
-                    </div>
+const EventCards = props => {
+    const { name, imgsrc, description, opening, opening_date, closing, closing_date, price, ticketLink, facebook, instagram, views } = props; return (
+        <div className="popup-card">
+            <div className="popup-main">
+                <div className="popup-header">
+                    <h5 className="popup-title align-center display-5">{name}</h5>
+                </div>
+                <div className="popup-image-holder">
+                    <img src={imgsrc} alt="Event" />
+                </div>
+                <div className="popup-description">
+                    <p>{description}</p>
+                </div>
+                <div className="popup-details">
+                    <p><strong>Opening Date:</strong> {opening_date} at {opening}</p>
+                    <p><strong>Closing Time:</strong> {closing_date} at {closing}</p>
+                    <p><strong>Price:</strong> {price}</p>
+                    <p><strong>Event Views:</strong> {views}</p>
                 </div>
             </div>
-        );
-    }
-}
+            <div className="popup-footer">
+                <p><a href={ticketLink}>Ticket</a></p>
+                <p><a href={facebook}>𝔽𝕒𝕔𝕖𝕓𝕠𝕠𝕜</a></p>
+                <p><a href={instagram}>𝕀𝕟𝕤𝕥𝕒𝕘𝕣𝕒𝕞</a></p>
+            </div>
+        </div>
+    );
+};
 
 export default EventCards;
